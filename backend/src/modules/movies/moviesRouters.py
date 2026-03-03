@@ -1,21 +1,8 @@
 from fastapi import APIRouter
+from .moviesApplication import movie_app
 
 roter = APIRouter()
 
 @roter.get("/movies")
 def get_movies():
-    return {
-        "movies": [
-            {
-                "id": 1,
-                "title": "The Shawshank Redemption",
-                "year": 1994
-            },
-            {
-                "id": 2,
-                "title": "The Godfather",
-                "year": 1972
-            }
-        ]
-    }
-
+    return movie_app.get_movie("Hello")
