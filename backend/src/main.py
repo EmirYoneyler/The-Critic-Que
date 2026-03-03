@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from src.modules.movies.moviesRouters import roter
+from .modules.movies.moviesRouters import roter
 
 app = FastAPI()
 
