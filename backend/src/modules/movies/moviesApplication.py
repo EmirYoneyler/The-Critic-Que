@@ -1,5 +1,6 @@
-from modules.movies.schema.dto.moviesResponse import MovieDetailsResponse
-from scrape.scraper_service import fetch_movie_data #ıts for data when we create sql
+# from modules.movies.schema.dto.moviesResponse import MovieDetailsResponse
+from ..scrape.scraperApplication import scrapper_app
+from .moviesRepo import movies_repo
 
 class MovieApplication:
     def __init__(self):
@@ -21,10 +22,16 @@ class MovieApplication:
 
 
     def check_movie_exists(movie_name):
-        pass
+        if movies_repo.check_movie_exists():
+            return {
+                "id" : "1",
+                "name" : "Fight Club"
+            }
+        else:
+            return False
 
-    def scrape_movie_data(movie_name):
-        pass
+    def scrape_movie_data(self, movie_name):
+        return scrapper_app.fetch_movie_data(movie_name)
 
 
 
