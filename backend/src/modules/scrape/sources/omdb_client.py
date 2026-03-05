@@ -29,4 +29,3 @@ def request_omdb_api(movie_name: str):
         print(f"Error fetching data from OMDB API: {e}")
         return None
 
-request_omdb_api("Fight Club")

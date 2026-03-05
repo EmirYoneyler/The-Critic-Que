@@ -14,15 +14,15 @@ class MovieApplication:
         
         scraped_data = self.scrape_movie_data(movie_name)
 
-        if not scraped_data or "error" in scraped_data:
+        if not scraped_data:
             return {"status": "error", "message": "Film couldn't be found."} 
         self.save_movie_to_db(scraped_data)
         return scraped_data
     
 
 
-    def check_movie_exists(movie_name):
-        if movies_repo.check_movie_exists():
+    def check_movie_exists(self, movie_name):
+        if movies_repo.check_movie_exists(movie_name):  # ✅
             return {
                 "id" : "1",
                 "name" : "Fight Club"
@@ -33,6 +33,8 @@ class MovieApplication:
     def scrape_movie_data(self, movie_name):
         return scrapper_app.fetch_movie_data(movie_name)
 
-
+    def save_movie_to_db(self, scraped_data):
+        # TODO: Implement saving to database
+        pass
 
 movie_app = MovieApplication()
