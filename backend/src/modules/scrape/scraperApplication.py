@@ -13,11 +13,18 @@ class ScrapeApplication:
 
 
 
-         if request_omdb_api(movie_name) and scrape_letterboxd():
-             return True
+        omdb_data = request_omdb_api(movie_name)
+        if not omdb_data:
+            return None
 
-         else:
-             pass
+        # Letterboxd is optional: OMDB data alone is enough to return a movie.
+        letterboxd_data = scrape_letterboxd(movie_name)
+
+        return {
+            "title": omdb_data.get("Title") or movie_name,
+            "omdb_data": omdb_data,
+            "letterboxd_data": letterboxd_data,
+        }
 
 
 scrapper_app = ScrapeApplication()
