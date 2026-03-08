@@ -1,5 +1,5 @@
 from .sources.omdb_client import request_omdb_api
-from .sources.letterboxd_scraper import scrape_letterboxd
+from .sources.letterboxd_client import scrape_letterboxd
 
 class ScrapeApplication:
 
