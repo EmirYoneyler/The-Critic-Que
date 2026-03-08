@@ -8,19 +8,18 @@ class MovieApplication:
 
     def get_movie(self, movie_name: str):
 
-        existing_movie = self.check_movie_exists(movie_name)
-        if existing_movie:
-            return existing_movie
+        # existing_movie = self.check_movie_exists(movie_name)
+        # if existing_movie:
+        #     return existing_movie
         
         scraped_data = self.scrape_movie_data(movie_name)
+        print("Scraped data:", scraped_data)  # Debugging line
 
         if not scraped_data:
             return {"status": "error", "message": "Film couldn't be found."} 
         self.save_movie_to_db(scraped_data)
         return scraped_data
 
-    def get_movies(self):
-        return movies_repo.get_all_movies()
     
 
 

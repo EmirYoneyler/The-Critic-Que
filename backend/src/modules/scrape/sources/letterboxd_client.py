@@ -24,15 +24,9 @@ def scrape_letterboxd_json(movie_name: str):
             
         # 2. Extract the specific dictionary that contains the Movie data
         movie_obj = next((item for item in data if item.get("@type") == "Movie"), {})
-        
-        # 3. Handle 'releasedEvent' which can also be nested inside a list
-        releases = movie_obj.get("releasedEvent", [{}])
-        if isinstance(releases, list):
-            release_year = releases[0].get("startDate", "")[:4] # Gets "2010" from "2010-07-14"
-        else:
-            release_year = releases.get("startDate", "")[:4]
 
         return {
+            "title": movie_obj.get("name"),
             "rating": movie_obj.get("aggregateRating", {}).get("ratingValue")
         }
         

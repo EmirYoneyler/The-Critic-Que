@@ -19,6 +19,8 @@ def request_omdb_api(movie_name: str):
         response.raise_for_status()
         data = response.json()
 
+        
+
         if data.get("Response") == "True":
             print(data)
             return data
