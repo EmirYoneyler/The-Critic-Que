@@ -1,14 +1,14 @@
 import logging
-from typing import Optional, List, Dict, Any
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
 class MoviesRepo:
     def __init__(self):
-        self._db: Dict[str, Any] = {}
+        self._db: dict[str, Any] = {}
         logger.info("Movies Repository initialized (In-memory mode).")
 
-    def check_movie_exists(self, movie_name: str) -> Optional[Dict]:
+    def check_movie_exists(self, movie_name: str) -> dict[str, Any] | None:
         name_key = movie_name.lower().strip()
         
         if name_key in self._db:
@@ -34,12 +34,12 @@ class MoviesRepo:
             logger.error(f"Error saving movie: {str(e)}")
             return False
 
-    def get_movie_by_name(self, movie_name: str) -> Optional[Dict]:
+    def get_movie_by_name(self, movie_name: str) -> dict[str, Any] | None:
         return self.check_movie_exists(movie_name)
 
     #  Opsiyonel
 
-    def get_all_movies(self) -> List[Dict]:
+    def get_all_movies(self) -> list[dict[str, Any]]:
         return list(self._db.values())
 
     def delete_movie(self, movie_name: str) -> bool:
