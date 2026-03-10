@@ -14,7 +14,7 @@ The Critic Que is a movie intelligence platform that combines OMDb metadata with
 - Explore a homepage "Top 10" feed.
 - Click directors in movie details to load that director's top movies.
 - Handle real-world scraping issues with resilient backend fallbacks.
-:
+.
 ## Core Features
 
 - Movie search with metadata: title, year, director, actors, runtime, awards, and more.
