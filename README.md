@@ -8,6 +8,27 @@
 
 The Critic Que is a movie intelligence platform that combines OMDb metadata with Letterboxd signals and multi-source review collection. It provides a FastAPI backend and a modern React dashboard for search, discovery, and director-focused exploration.
 
+## Project Pitch
+
+The Critic Que is a full-stack movie intelligence platform that aggregates metadata, multi-source ratings, and external review snippets into a single, polished dashboard. Built with FastAPI and React, it covers instant movie discovery, a curated Top 10 feed, and director exploration. A resilient scraping strategy ensures the experience remains functional even when data sources are unavailable.
+
+## Key Features
+
+- **Movie search** enriched with metadata: title, cast, runtime, awards, and more
+- **Multi-source rating bars**: IMDb, Rotten Tomatoes, Metacritic, Letterboxd, and Reddit
+- **External review cards** with source attribution
+- **Top 10 discovery feed** on the homepage
+- **Director exploration**: load top movies for any director in one click
+- **Docker Compose** setup for one-command local development
+- **Swagger / OpenAPI** documentation available at `/docs`
+
+## Links
+
+- **GitHub Repository**: [https://github.com/EmirYoneyler/The-Critic-Que](https://github.com/EmirYoneyler/The-Critic-Que)
+- **Frontend** (local dev): `http://localhost:5173`
+- **API** (local dev): `http://localhost:6767`
+- **API Docs** (Swagger, local dev): `http://localhost:6767/docs`
+
 ## Why This Project
 
 - Search any movie and get enriched metadata, ratings, and review snippets.
