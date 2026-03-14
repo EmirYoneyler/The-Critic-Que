@@ -13,13 +13,15 @@ The Problem
 Movie enthusiasts often have to switch between 4-5 different platforms to get a complete picture of a film's quality. Moreover, data fragmentation and anti-scraping measures on major platforms make it difficult to aggregate real-time community sentiment reliably.
 
 The Engineering Solution
-I engineered a resilient multi-source aggregation engine using FastAPI and BeautifulSoup. Key technical achievements include:
+I engineered a resilient multi-source aggregation engine using FastAPI and BeautifulSoup.
 
-Resilient Scraping Logic: Implemented a "Fallback Strategy" that ensures the UI remains functional even when specific external data sources (like Letterboxd lists) are rate-limited or blocked.
+Key Technical Achievements:
 
-Performance Optimization: Integrated an in-memory repository pattern to orchestrate caching, reducing redundant external API calls and lowering latency for frequently searched titles.
+🛡️ Resilient Scraping Logic: Implemented a "Fallback Strategy" that ensures the UI remains functional even when external data sources (like Letterboxd lists) are rate-limited or blocked.
 
-Modular Architecture: Designed the backend with a clear separation of concerns (Modules: Movies, Scrape, Shared), making it easy to plug in new data providers without refactoring the core logic.
+⚡ Performance Optimization: Integrated an In-Memory Repository Pattern to orchestrate caching, reducing redundant API calls and lowering latency for frequently searched titles.
+
+🧩 Modular Architecture: Designed the backend with a clear Separation of Concerns (Modules: Movies, Scrape, Shared), enabling easy integration of new data providers.
 
 
 ## Why This Project
