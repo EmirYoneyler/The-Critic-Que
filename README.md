@@ -8,6 +8,20 @@
 
 The Critic Que is a movie intelligence platform that combines OMDb metadata with Letterboxd signals and multi-source review collection. It provides a FastAPI backend and a modern React dashboard for search, discovery, and director-focused exploration.
 
+🎯 Case Study: Problem vs. Solution
+The Problem
+Movie enthusiasts often have to switch between 4-5 different platforms to get a complete picture of a film's quality. Moreover, data fragmentation and anti-scraping measures on major platforms make it difficult to aggregate real-time community sentiment reliably.
+
+The Engineering Solution
+I engineered a resilient multi-source aggregation engine using FastAPI and BeautifulSoup. Key technical achievements include:
+
+Resilient Scraping Logic: Implemented a "Fallback Strategy" that ensures the UI remains functional even when specific external data sources (like Letterboxd lists) are rate-limited or blocked.
+
+Performance Optimization: Integrated an in-memory repository pattern to orchestrate caching, reducing redundant external API calls and lowering latency for frequently searched titles.
+
+Modular Architecture: Designed the backend with a clear separation of concerns (Modules: Movies, Scrape, Shared), making it easy to plug in new data providers without refactoring the core logic.
+
+
 ## Why This Project
 
 - Search any movie and get enriched metadata, ratings, and review snippets.
